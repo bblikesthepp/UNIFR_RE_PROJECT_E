@@ -19,7 +19,7 @@ UniFlow is a university campus management tool built with Aurelia. It provides d
 
 Make sure you have the following installed:
 
-- **Node.js**: for dependencies
+- **Node.js**: 'npm install' for dependencies
 - **Git**: To clone and manage your project
 - **Aurelia CLI**: If you don't have the Aurelia CLI installed, install it globally:
   ```bash
