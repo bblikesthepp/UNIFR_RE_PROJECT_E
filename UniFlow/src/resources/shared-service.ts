@@ -94,7 +94,7 @@ export class SharedService {
       enrollment.courses.push(courseId);
     }
   }
-  
+
   public getEnrolledCourses(student: string): string[] {
     const enrollment = this.enrollments.find(e => e.student === student);
     return enrollment ? enrollment.courses : [];

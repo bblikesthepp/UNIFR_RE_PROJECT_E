@@ -44,3 +44,10 @@
     font-size: 1rem;
     color: #555;
   }
+
+  .course-item {
+  background-color: rgba(139, 165, 170, 0.402);
+  border: none;
+  
+  
+  }

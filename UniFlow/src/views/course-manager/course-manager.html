@@ -6,7 +6,6 @@
       <!-- Dynamic content based on the user's role -->
       <div if.bind="role === 'student'" class="student-section">
         <ul>
-
           <li><button click.trigger="showAvailableCourses()">View Courses</button></li>
           <li><button click.trigger="navigateToAssignments()">View Assignments</button></li>
         </ul>
@@ -20,7 +19,7 @@
                   <button click.trigger="enroll(course)">Enroll</button>
                 </div>
           </div>
-      </div>
+        </div>
       
       </div>
   
@@ -32,17 +31,8 @@
           <li><button click.trigger="navigateToCourseManagement()">Manage Courses</button></li>
           <li><button click.trigger="navigateToGradeAssignments()">Grade Assignments</button></li>
           <li><button click.trigger="navigateToGradeAssignments()">Schedule Classes</button></li>
-        </ul>
 
-        <form submit.trigger="addCourse()">
-          <label for="name">Course Name:</label>
-          <input id="name" type="text" value.bind="newCourse.name" placeholder="Enter course name" required />
-  
-          <label for="description">Course Description:</label>
-          <input id="description" type="text" value.bind="newCourse.description" placeholder="Enter description" required />
-  
-          <button type="submit">Add Course</button>
-        </form>
+        </ul>
       </div>
     </div>
   

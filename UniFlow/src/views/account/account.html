@@ -20,16 +20,15 @@
       
       <section if.bind="activeSection === 'courses'" id="courses">
         <h2>Enrolled Courses</h2>
-        <ul>
-          <li>Introduction to Programming</li>
-          <li>Data Structures</li>
-          <li>Web Development</li>
-        </ul>
+
+        <div repeat.for="course of enrolledCourses" class="course-item">
+          <p>${course.name}</p>
+        </div>
       </section>
       
       <section if.bind="activeSection === 'grades'" id="grades">
         <h2>Grades</h2>
-        <p>Coming soon...</p>
+        <p>No grades yet</p>
       </section>
       
       <section if.bind="activeSection === 'settings'" id="settings">
