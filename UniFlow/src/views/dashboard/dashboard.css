@@ -2,6 +2,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  min-width: 550px;
+  position: relative;
+  }
 
 html, body {
   margin-left: 50px;

@@ -1,8 +1,8 @@
 .course-manager {
   position: relative;
   top: 0px;
-  width: 100%; /* Adjust the width as needed */
-  max-width:2000px; /* Set a maximum width */
+  width: 100%;
+  max-width:2000px; 
   border-radius: 200px;
   padding: 16px;
   margin-left: 16px;
@@ -33,7 +33,7 @@ body {
   
   
   ul {
-    list-style-type:circle;
+    list-style-type:none;
     padding: 15px;
     text-align: justify;
   }
@@ -69,16 +69,20 @@ body {
 }
 
 .course-item {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    padding: 16px;
-    margin: 16px;
-    width: 45%;
-    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px;
+  width: 45%;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 .course-item h2 {
-    color: #007BFF;
+  color: #007BFF;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
 }
 
 .course-item p {
@@ -109,4 +113,17 @@ body {
   padding: 16px;
   margin: 16px;
   box-shadow: var(--mdc-elevation--z4);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+form input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
