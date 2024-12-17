@@ -1,0 +1,46 @@
+<template>
+    <div class="course-manager">
+      <h1>Course Manager</h1>
+  
+  
+      <!-- Dynamic content based on the user's role -->
+      <div if.bind="role === 'student'" class="student-section">
+        <h2>Student Dashboard</h2>
+        <p>Your role is: ${role}</p>
+        <ul>
+          <li>View enrolled courses</li>
+          <li>Submit assignments</li>
+          <li>Check grades</li>
+          <li><button click.trigger="navigateToCoursePage()">View Courses</button></li>
+          <li><button click.trigger="navigateToAssignments()">View Assignments</button></li>
+        </ul>
+  
+        <div class="courses">
+          <div class="course-list">
+              <div *ngFor="let course of courses" class="course-item">
+                  <h2>{{ course.name }}</h2>
+                  <p>{{ course.description }}</p>
+                  <button (click)="enroll(course)">Enroll</button>
+              </div>
+          </div>
+      </div>
+      
+      </div>
+  
+      <div if.bind="role === 'teacher'" class="teacher-section">
+        <h2>Teacher Dashboard</h2>
+        <p>Your role is: ${role}</p>
+        <ul>
+          <li>Manage courses</li>
+          <li>Grade assignments</li>
+          <li>Schedule classes</li>
+          <li><button click.trigger="navigateToCourseManagement()">Manage Courses</button></li>
+          <li><button click.trigger="navigateToGradeAssignments()">Grade Assignments</button></li>
+        </ul>
+      </div>
+    </div>
+  
+  
+  
+  </template>
+  

@@ -1,0 +1,48 @@
+<template>
+    <h1>Welcome to UniFlow</h1>
+  
+    <!-- Login Form, only shown when isRegistering is false -->
+    <div if.bind="!isRegistering">
+      <h2>Login</h2>
+      <form submit.trigger="login()">
+        <label for="username">Username:</label>
+        <input type="text" id="username" value.bind="username" required>
+  
+        <label for="password">Password:</label>
+        <input type="password" id="password" value.bind="password" required>
+  
+        <label for="role">Role:</label>
+        <select id="role" value.bind="role">
+          <option value="student">Student</option>
+          <option value="teacher">Teacher</option>
+        </select>
+  
+        <button type="submit">Login</button>
+        <button type="button" click.trigger="toggleRegisterForm()">Register New Account</button>
+      </form>
+    </div>
+  
+    <!-- Registration Form, only shown when isRegistering is true -->
+    <div if.bind="isRegistering">
+      <h2>Don't have an account? Register here</h2>
+      <form submit.trigger="register()">
+        <label for="newUsername">Username:</label>
+        <input type="text" id="newUsername" value.bind="newUsername" required>
+  
+        <label for="newPassword">Password:</label>
+        <input type="password" id="newPassword" value.bind="newPassword" required>
+  
+        <label for="newRole">Role:</label>
+        <select id="newRole" value.bind="newRole">
+          <option value="student">Student</option>
+          <option value="teacher">Teacher</option>
+        </select>
+  
+        <button type="submit">Register</button>
+        <button class="back-to-login-button" type="button" click.trigger="toggleRegisterForm()">Back to Login</button>
+      </form>  
+    </div>
+  
+  
+  </template>
+  

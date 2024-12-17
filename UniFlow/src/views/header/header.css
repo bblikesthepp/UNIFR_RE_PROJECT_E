@@ -1,0 +1,132 @@
+.header{  padding: 20px;
+  text-align: center;
+  position: relative;
+  height: 80px;  /* Adjust based on your header height */
+  box-sizing: border-box;  /* Ensure padding is included in the height */
+  z-index: 10;}
+
+
+/* general eader Styling */
+#header-buttons {
+  position:fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 20px;
+  flex-wrap: wrap;
+  border-bottom: 2px solid #e0e0e0;
+  background-color: white;
+}
+  #mobile-menu {
+  display: none;
+  position: fixed;
+  justify-content: space-around;
+  gap: 10px;
+  padding: 15px 20px;
+  flex-wrap: wrap;
+  border-bottom: 2px solid #e0e0e0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+
+}
+.button-menu { 
+  position: fixed;
+  padding: 10px 20px;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+.button-menu button {
+  border-radius: 4px;
+  border: none;
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #78a8c1;
+  transition: background-color 0.3s ease;
+  color: white;
+}
+
+.mdc-button:hover {
+  background-color: #3700b3;
+}
+.mdc-button:active {
+  background-color: #30009c;
+}
+
+
+
+.dropdown-button {
+  background-color: #78a8c1;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  gap: 10px;
+  padding: 15px 15px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.dropdown-button:hover {
+  background-color: #3301a8;
+}
+
+.dropdown-content {
+  display: none; /* hidden by default */
+  position: absolute;
+  top: 50px;
+  left: 0;
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+/* show dropdown content when 'show' is added to the parent .dropdown */
+.dropdown.show .dropdown-content {
+  display: block;
+}
+
+.dropdown-content button {
+  width: 100%;
+  text-align: left;
+  padding: 10px;
+  border: none;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+}x
+
+.dropdown-content button:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown-content .show {
+  display: block;
+}
+
+/* Media Query for Responsive Design */
+@media (max-width: 600px) {
+  #header-buttons {
+    display: none; /* hide static buttons */
+  }
+  #mobile-menu {
+    display: block;
+  }
+
+
+  
+}

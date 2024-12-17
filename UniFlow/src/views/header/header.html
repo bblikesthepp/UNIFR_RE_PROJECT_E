@@ -1,0 +1,19 @@
+<template>  
+  <div class="button-menu" id="header-buttons">
+    <button onclick="history.back()">Back</button>
+    <a load="/">Login/Logout</a>
+
+  </div>  
+
+
+    <!-- dropdown menu for smaller screens -->
+    <div class="dropdown" id="mobile-menu">
+      <button class="dropdown-button" click.trigger="toggleDropdown()">☰ Menu</button>
+      <div class="dropdown-content" id="dropdown-menu">
+        <button mdc-button raised click.trigger="redirectTo('login')">Go to Login Page</button>
+        <button mdc-button raised click.trigger="redirectTo('dashboard/.')"> Dashboard</button>
+      </div>
+    </div>
+
+  </template>
+  
