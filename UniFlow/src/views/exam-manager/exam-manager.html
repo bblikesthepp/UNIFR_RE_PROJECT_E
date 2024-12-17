@@ -1,0 +1,11 @@
+<template>
+    <div class="exam-manager-container mdc-card">
+      <h2 class="mdc-typography--headline6">Exam Manager</h2>
+      <ul class="mdc-list">
+        <li repeat.for="exam of exams" class="mdc-list-item">
+          <span class="mdc-list-item__text">${exam.subject} - ${exam.date}</span>
+        </li>
+      </ul>
+    </div>
+  </template>
+  

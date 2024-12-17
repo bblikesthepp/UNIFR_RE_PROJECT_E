@@ -1,12 +1,12 @@
 .course-manager {
-  margin: 0 auto; /* Center the element */
   position: relative;
   top: 80px;
   width: 100%; /* Adjust the width as needed */
   max-width:2000px; /* Set a maximum width */
-  padding: 20px; /* Add padding */
   border-radius: 200px;
-
+  padding: 16px;
+  margin-left: 16px;
+  box-shadow: var(--mdc-elevation--z4);
 } 
 
 body {
@@ -102,4 +102,11 @@ body {
 .student-section,.teacher-section{
     display: flex;
     width: 100%;
+}
+
+
+.course-manager-container {
+  padding: 16px;
+  margin: 16px;
+  box-shadow: var(--mdc-elevation--z4);
 }

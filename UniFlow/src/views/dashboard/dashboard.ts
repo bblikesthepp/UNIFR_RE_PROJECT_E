@@ -20,8 +20,7 @@ export class Dashboard implements IRouteableComponent {
   isBackButton: boolean = false;  //  show 'Course Manager' or 'Back' button
   public showMenu: boolean = true;  // show/hide the menu
 
-  constructor(private sharedService: SharedService) {
-  }
+  constructor(private sharedService: SharedService) {}
 
   
   async loading(params: { username: string, role:string }): Promise<void> {

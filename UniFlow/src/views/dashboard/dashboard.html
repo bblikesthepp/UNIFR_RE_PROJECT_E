@@ -4,43 +4,41 @@
       <h2>Welcome, ${username}</h2>
     </div>
   
-    
-    <!-- Toggle Menu visibility based on the showMenu property -->
-    <ol class="menu-list" id="showMenu" >
+        <ol class="menu-list" id="showMenu" >
       <li>
         <a load="my-schedule" class="menu-link" click.trigger="toggleCourseManager()">
-          <img src="https://html-online.com/img/01-interactive-connection.png" alt="interactive connection" class="menu-icon" />
+          <img src="https://html-online.com/img/01-interactive-connection.png"  class="menu-icon" />
           <!-- ${isBackButton? 'Back' : 'My Schedule'} -->
            My Schedule
         </a>
       </li>
       <li>
         <a load="course-manager" class="menu-link" click.trigger="toggleCourseManager()" >
-          <img src="https://html-online.com/img/02-html-clean.png" alt="html cleaner" class="menu-icon" />
-          ${isBackButton? 'Back' : 'Course Manager'}
+          <img src="https://html-online.com/img/02-html-clean.png"  class="menu-icon" />
+          Course Manager
         </a>
       </li>
       <li>
-        <a load="exam-manager" class="menu-link" if.bind="showMenu">
-          <img src="https://html-online.com/img/03-docs-to-html.png" alt="Word to html" class="menu-icon" />
+        <a load="exam-manager" class="menu-link" click.trigger="toggleCourseManager()">
+          <img src="https://html-online.com/img/03-docs-to-html.png" class="menu-icon" />
           Exam Manager
         </a>
       </li>
       <li>
-        <a load="account" class="menu-link" if.bind="showMenu">
-          <img src="https://html-online.com/img/04-replace.png" alt="replace text" class="menu-icon" />
+        <a load="account" class="menu-link" click.trigger="toggleCourseManager()">
+          <img src="https://html-online.com/img/04-replace.png"  class="menu-icon" />
           Account
         </a>
       </li>
       <li>
-        <a href="notifs" class="menu-link" if.bind="showMenu">
-          <img src="https://html-online.com/img/05-gibberish.png" alt="gibberish" class="menu-icon" />
+        <a load="notifs" class="menu-link" click.trigger="toggleCourseManager()">
+          <img src="https://html-online.com/img/05-gibberish.png" class="menu-icon" />
           Notifications
         </a>
       </li>
       <li>
-        <a href="#" class="menu-link" if.bind="showMenu" click.trigger="toggleCourseManager()">
-          <img src="https://html-online.com/img/6-table-div-html.png" alt="html table div" class="menu-icon" />
+        <a href="#" class="menu-link" click.trigger="toggleCourseManager()">
+          <img src="https://html-online.com/img/6-table-div-html.png"  class="menu-icon" />
           Log Out
         </a>
       </li>

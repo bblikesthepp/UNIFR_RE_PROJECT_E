@@ -1,0 +1,11 @@
+<template>
+    <div class="notifications-container mdc-card">
+      <h2 class="mdc-typography--headline6">Notifications</h2>
+      <ul class="mdc-list">
+        <li repeat.for="notification of notifications" class="mdc-list-item">
+          <span class="mdc-list-item__text">${notification}</span>
+        </li>
+      </ul>
+    </div>
+  </template>
+  

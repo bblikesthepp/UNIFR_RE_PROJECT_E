@@ -13,6 +13,7 @@ import { SharedService } from '../../resources/shared-service';
     public username: string = '';
     public role: string = 'undefined';  
 
+
     constructor(private sharedService: SharedService) {}
   
  

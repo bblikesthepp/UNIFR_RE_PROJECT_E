@@ -35,6 +35,26 @@ export class MyApp implements IRouteableComponent{
           component: () => import('./resources/fourohfour-page'), 
           title: '404 '
         },
+        { 
+          path: 'account', 
+          component: () => import('./views/account/account'), 
+          title: 'My Account '
+        },
+        { 
+          path: 'my-schedule', 
+          component: () => import('./views/schedule-manager/my-schedule'), 
+          title: 'My Schedule '
+        },
+        { 
+          path: 'exam-manager', 
+          component: () => import('./views/exam-manager/exam-manager'), 
+          title: 'Manage Exams '
+        },
+        { 
+          path: 'notifs', 
+          component: () => import('./views/notifications/notifs'), 
+          title: 'My Notifications '
+        },
         
       ];
 

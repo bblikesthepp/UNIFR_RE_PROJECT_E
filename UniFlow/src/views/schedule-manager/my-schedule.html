@@ -1,0 +1,11 @@
+<template>
+    <div class="schedule-container mdc-card">
+      <h2 class="mdc-typography--headline6">My Schedule</h2>
+      <ul class="mdc-list">
+        <li repeat.for="item of schedule" class="mdc-list-item">
+          <span class="mdc-list-item__text">${item.time} - ${item.course}</span>
+        </li>
+      </ul>
+    </div>
+  </template>
+  
