@@ -1,6 +1,46 @@
 .account-container {
     padding: 16px;
-    margin: 16px;
+    margin-top: 100px;
     box-shadow: var(--mdc-elevation--z4);
   }
+  .h1{top: 20px;
+  margin-top: 0px;}
+
+  nav ul {
+    display: grid;
+    grid-auto-flow:row;
+    grid-row-gap: 10px ;
+    justify-content: space-around;
+    padding: 0;
+    list-style: none;
+    margin-bottom: 16px;
+  }
   
+  nav ul li button {
+    padding: 10px 20px;
+    background-color: #176d6fa8;
+    color: white;
+    border: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    
+  }
+  
+  nav ul li button:hover {
+    background-color: #0056b3;
+  }
+  
+  section {
+    padding: 16px;
+    margin-top: 16px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+  }
+  
+  
+  section p, section ul {
+    font-size: 1rem;
+    color: #555;
+  }

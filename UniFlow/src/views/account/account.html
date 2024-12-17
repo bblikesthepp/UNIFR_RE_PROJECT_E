@@ -1,10 +1,53 @@
 <template>
     <div class="account-container mdc-card">
-      <h2 class="mdc-typography--headline6">Account</h2>
-      <div class="mdc-list">
-        <div class="mdc-list-item">Username: ${username}</div>
-        <div class="mdc-list-item">Role: ${role}</div>
-      </div>
+      <h1>My Account</h1>
+      <nav>
+        <ul>
+          <li><button click.trigger="showSection('profile')">Profile</button></li>
+          <li><button click.trigger="showSection('courses')">Courses</button></li>
+          <li><button click.trigger="showSection('grades')">Grades</button></li>
+          <li><button click.trigger="showSection('settings')">Settings</button></li>
+        </ul>
+      </nav>
+      
+      <section if.bind="activeSection === 'profile'" id="profile">
+        <h2>Profile Information</h2>
+        <p>Name: ${username}</p>
+        <p>Student ID: 123456</p>
+        <p>Email: johndoe@example.com</p>
+        <p>Role: ${role}</p>
+      </section>
+      
+      <section if.bind="activeSection === 'courses'" id="courses">
+        <h2>Enrolled Courses</h2>
+        <ul>
+          <li>Introduction to Programming</li>
+          <li>Data Structures</li>
+          <li>Web Development</li>
+        </ul>
+      </section>
+      
+      <section if.bind="activeSection === 'grades'" id="grades">
+        <h2>Grades</h2>
+        <p>Coming soon...</p>
+      </section>
+      
+      <section if.bind="activeSection === 'settings'" id="settings">
+        <h2>Account Settings</h2>
+        <form>
+          <label for="email">Change Email:</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="username">Change Username:</label>
+          <input type="username" id="username" name="username" required>
+
+          <label for="password">Change Password:</label>
+          <input type="email" id="password" name="password" required>
+
+          <button type="submit">Update</button>
+
+        </form>
+      </section>
     </div>
   </template>
   

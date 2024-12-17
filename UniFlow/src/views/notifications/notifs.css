@@ -3,4 +3,66 @@
     margin: 16px;
     box-shadow: var(--mdc-elevation--z4);
   }
+
+  .notifications {
+    position: relative;
+    top: 0px;
+    width: 100%;
+    max-width: 2000px;
+    border-radius: 20px;
+    padding: 16px;
+    margin-left: 16px;
+    box-shadow: var(--mdc-elevation--z4);
+  }
   
+  .notifications h1 {
+    color: #5e9ca0;
+    text-align: center;
+    position: relative;
+    top: 20px;
+  }
+  
+  .notifications-list {
+    list-style-type: square;
+    padding: 15px;
+    text-align: justify;
+  }
+  
+  .notification-item {
+    margin: 10px 0;
+    padding: 16px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .notification-item span {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .notification-item .important {
+    font-weight: bold;
+    color: #007BFF;
+  }
+  
+  .notification-item button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+    margin-top: 10px;
+  }
+  
+  .notification-item button:hover {
+    background-color: #0056b3;
+  }
+  
+  .h2 {
+    color: #5e9ca0;
+    text-align: center;
+    position: top;
+    top: 20px;
+  }

@@ -5,8 +5,6 @@
   
       <!-- Dynamic content based on the user's role -->
       <div if.bind="role === 'student'" class="student-section">
-        <h2>Student Dashboard</h2>
-        <p>Your role is: ${role}</p>
         <ul>
           <li>View enrolled courses</li>
           <li>Submit assignments</li>
@@ -28,8 +26,6 @@
       </div>
   
       <div if.bind="role === 'teacher'" class="teacher-section">
-        <h2>Teacher Dashboard</h2>
-        <p>Your role is: ${role}</p>
         <ul>
           <li>Manage courses</li>
           <li>Grade assignments</li>
@@ -40,14 +36,6 @@
       </div>
     </div>
   
-  
-    <div class="course-manager-container mdc-card">
-      <h2 class="mdc-typography--headline6">Course Manager</h2>
-      <ul class="mdc-list">
-        <li repeat.for="course of courses" class="mdc-list-item">
-          <span class="mdc-list-item__text">${course}</span>
-        </li>
-      </ul>
-    </div>
+
   </template>
   

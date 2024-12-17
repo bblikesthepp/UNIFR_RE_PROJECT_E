@@ -18,7 +18,7 @@ export class Dashboard implements IRouteableComponent {
   public role = 'student';
   public showDiv: boolean = false;
   isBackButton: boolean = false;  //  show 'Course Manager' or 'Back' button
-  public showMenu: boolean = true;  // show/hide the menu
+  public showTitle: boolean = true;  // show/hide the title
 
   constructor(private sharedService: SharedService) {}
 
@@ -45,9 +45,8 @@ export class Dashboard implements IRouteableComponent {
 
   public toggleCourseManager(): void {
       this.showDiv = true;
-      this.showMenu = true;
+      this.showTitle = false;
   }    
-
 
   
     

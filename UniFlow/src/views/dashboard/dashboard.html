@@ -1,7 +1,7 @@
 <template>
-    <div if.bind="showMenu">
-    <h1 class="menu-title">${title}</h1>
-      <h2>Welcome, ${username}</h2>
+    <div>
+    <h1 class="menu-title" if.bind="showTitle" >${title}</h1>
+      <h2 if.bind="showTitle">Welcome, ${username}</h2>
     </div>
   
         <ol class="menu-list" id="showMenu" >

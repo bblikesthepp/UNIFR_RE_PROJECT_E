@@ -1,6 +1,6 @@
 .course-manager {
   position: relative;
-  top: 80px;
+  top: 0px;
   width: 100%; /* Adjust the width as needed */
   max-width:2000px; /* Set a maximum width */
   border-radius: 200px;

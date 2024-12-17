@@ -14,12 +14,17 @@ export class Account {
   public title: string = 'Account';
   public username = '';
   public role = '';
+  activeSection: string | null = null;
+
 
   constructor(private sharedService: SharedService) {}
-  
  
   async loading(params: { username: string }): Promise<void> {
     this.username = params.username;
     this.role = this.sharedService.getRole();
+  }
+
+  showSection(section: string) {
+    this.activeSection = section; 
   }
 }
