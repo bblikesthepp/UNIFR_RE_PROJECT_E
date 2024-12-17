@@ -1,5 +1,5 @@
 <template>
-    <div class="exam-manager-container mdc-card">
+    <div if.bind="role ==='student'" class="exam-manager-container mdc-card">
       <h2 class="mdc-typography--headline6">Exam Manager</h2>
       <ul class="mdc-list">
         <li repeat.for="exam of exams" class="mdc-list-item">
@@ -30,5 +30,60 @@
         </table>
     </section>
     </div>
+
+
+    <!-- Teacher Section -->
+    <div if.bind="role === 'teacher'" class="teacher-section">
+      <h3>Add New Exam</h3>
+      <form class="addExam" submit.trigger="addExam()">
+        <label for="subject">Subject:</label>
+        <input id="subject" type="text" value.bind="newExam.subject" placeholder="Enter subject" required />
+
+        <label for="date">Date:</label>
+        <input id="date" type="date" value.bind="newExam.date" required />
+
+        <button type="submit" class="btn-primary">Add Exam</button>
+      </form>
+
+      <h3>Grade a Student</h3>
+      <form class="gradeStudent" submit.trigger="addGrade(student, course, grade)">
+        <label for="student">Student Name:</label>
+        <input id="student" type="text" value.bind="student" placeholder="Enter student name" required />
+
+        <label for="course">Course:</label>
+        <input id="course" type="text" value.bind="course" placeholder="Enter course name" required />
+
+        <label for="grade">Grade:</label>
+        <input id="grade" type="text" value.bind="grade" placeholder="Enter grade (e.g., A, B+)" required />
+
+        <button type="submit" class="btn-primary">Add Grade</button>
+      </form>
+
+          <!-- Exams List -->
+    <h3>Scheduled Exams</h3>
+    <ul class="exam-list">
+      <li repeat.for="exam of exams" class="exam-item">
+        <span>${exam.subject} - ${exam.date}</span>
+      </li>
+    </ul>
+
+    <!-- Grades Section -->
+    <h3>Grades</h3>
+    <table class="grades-table">
+      <tr>
+        <th>Student</th>
+        <th>Course</th>
+        <th>Grade</th>
+      </tr>
+      <tr repeat.for="grade of grades">
+        <td>${grade.student}</td>
+        <td>${grade.course}</td>
+        <td>${grade.grade}</td>
+      </tr>
+    </table>
+    </div>
+  </div>
+
+
   </template>
   

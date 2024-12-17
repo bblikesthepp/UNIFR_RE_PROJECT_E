@@ -39,6 +39,25 @@ export class SharedService {
   public addCourse(course: Course): void {
     this.courses.push(course);
   }
+
+  private exams: { subject: string; date: string }[] = [];
+  private grades: { student: string; course: string; grade: string }[] = [];
+
+  addExam(exam: { subject: string; date: string }) {
+    this.exams.push(exam);
+  }
+
+  getExams() {
+    return this.exams;
+  }
+
+  addGrade(grade: { student: string; course: string; grade: string }) {
+    this.grades.push(grade);
+  }
+
+  getGrades() {
+    return this.grades;
+  }
 }
 
 export interface Course {
