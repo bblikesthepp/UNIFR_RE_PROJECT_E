@@ -41,3 +41,60 @@
     color: #007BFF;
   }
   
+  /* Planner Grid Layout */
+.planner {
+  display: flex;
+  flex-direction: column;
+}
+
+.planner-header {
+  display: grid;
+  grid-template-columns: 100px repeat(5, 1fr);
+  background-color: #f1f1f1;
+  font-weight: bold;
+  text-align: center;
+}
+
+.planner-day {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.planner-body {
+  display: grid;
+  grid-template-columns: 100px repeat(5, 1fr);
+}
+
+.time-slot {
+  display: contents; 
+}
+
+.planner-time {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e9ecef;
+  border: 1px solid #ddd;
+  font-weight: bold;
+}
+
+.planner-cell {
+  min-height: 60px;
+  min-width: 100px;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.course-item {
+  background-color: #007BFF;
+  min-width: 100px;
+  color: #fff;
+  padding: 8px;
+  border-radius: 2px;
+  font-size: 0.9rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

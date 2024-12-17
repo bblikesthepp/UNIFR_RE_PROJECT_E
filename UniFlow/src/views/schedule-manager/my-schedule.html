@@ -1,11 +1,28 @@
 <template>
-    <div class="schedule-container mdc-card">
-      <h2 class="mdc-typography--headline6">My Schedule</h2>
-      <ul class="mdc-list">
-        <li repeat.for="item of schedule" class="mdc-list-item">
-          <span class="mdc-list-item__text">${item.time} - ${item.course}</span>
-        </li>
-      </ul>
+  <div class="schedule-container mdc-card">
+    <h2 class="mdc-typography--headline5">${title}</h2>
+
+    <div class="planner">
+      <!-- Table Header -->
+      <div class="planner-header">
+        <div class="planner-time"></div>
+        <div repeat.for="day of ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']" class="planner-day">
+          ${day}
+        </div>
+      </div>
+
+      <!-- Table Body -->
+      <div class="planner-body">
+        <div class="time-slot" repeat.for="time of ['08:00 AM', '10:00 AM', '01:00 PM', '03:00 PM']">
+          <div class="planner-time">${time}</div>
+          <div repeat.for="day of ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']" class="planner-cell">
+            <!-- check for a scheduled course -->
+            <div repeat.for="item of schedule" if.bind="item.time === time && item.day === day" class="course-item">
+              ${item.course}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </template>
-  
+  </div>
+</template>
