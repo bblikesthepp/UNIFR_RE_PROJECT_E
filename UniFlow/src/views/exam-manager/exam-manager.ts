@@ -1,7 +1,7 @@
 import { customElement } from '@aurelia/runtime-html';
 import template from './exam-manager.html';
 import { inject } from 'aurelia';
-import { SharedService } from '../../resources/shared-service';
+import { SharedService, Exam, Grade, Course } from '../../resources/shared-service';
 
 @inject(SharedService)
 @customElement({
@@ -11,15 +11,41 @@ import { SharedService } from '../../resources/shared-service';
 export class ExamManager {
   public title: string = 'Exam Manager';
   public role: string = 'undefined';
+  public username: string = '';
 
-  public newExam = { subject: '', date: '' };
-  public exams: { subject: string; date: string }[] = [];
-  public grades: { student: string; course: string; grade: string }[] = [];
+  public newExam: Exam = { subject: '', date: '' };
+  public exams: Exam[] = [];
+  public grades: Grade[] = [];
+
+  public studentCourses: string[] = [];
+  public filteredExams: Exam[] = [];
 
   constructor(private sharedService: SharedService) {}
 
   attached() {
-    this.role = this.sharedService.getRole();
+    const user = this.sharedService.getUser();
+    this.role = user.role;
+    this.username = user.username;
+
+    if (this.role === 'student') {
+      this.loadStudentView();
+      this.loadStudentExams();
+
+    } else if (this.role === 'teacher') {
+      this.loadTeacherView();
+      this.exams = this.sharedService.getExams();
+
+    }
+  }
+
+  loadStudentView() {
+    // Fetch enrolled courses and filter exams
+    this.studentCourses = this.sharedService.getEnrolledCourses(this.username);
+    this.filteredExams = this.sharedService.getExamsByCourses(this.studentCourses);
+  }
+
+  loadTeacherView() {
+    // Load all exams for teachers
     this.exams = this.sharedService.getExams();
     this.grades = this.sharedService.getGrades();
   }
@@ -27,8 +53,8 @@ export class ExamManager {
   addExam() {
     if (this.newExam.subject && this.newExam.date) {
       this.sharedService.addExam({ ...this.newExam });
-      this.exams = this.sharedService.getExams();
       this.newExam = { subject: '', date: '' }; // Reset form
+      this.exams = this.sharedService.getExams();
       alert('New exam added successfully!');
     } else {
       alert('Please provide exam subject and date.');
@@ -44,4 +70,22 @@ export class ExamManager {
       alert('All fields are required to grade a student.');
     }
   }
+  loadStudentExams() {
+    // get enrolled course IDs for the student
+    const enrolledCourseIds = this.sharedService.getEnrolledCourses(this.username);
+  
+    // map course IDs to their corresponding Course objects
+    const enrolledCourses = enrolledCourseIds
+      .map(courseId => this.sharedService.getCourses().find(course => course.id === courseId))
+      .filter((course): course is Course => !!course); // Ensure no null/undefined values
+  
+    // extract course names
+    const enrolledCourseNames = enrolledCourses.map(course => course.name);
+  
+    // filter exams based on the subjects matching the enrolled course names
+    this.filteredExams = this.sharedService
+      .getExams()
+      .filter(exam => enrolledCourseNames.includes(exam.subject));
+  }
+  
 }

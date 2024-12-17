@@ -19,14 +19,21 @@ export class MySchedule {
 
   attached() {
     const timeSlots = ['08:00 AM', '10:00 AM', '01:00 PM', '03:00 PM'];
+    const username = this.sharedService.getUser().username;
 
     const courses = this.sharedService.getCourses();
+    const enrolledCourses = this.sharedService.getEnrolledCourses(username);
+
 
     // automatically put courses into the schedule
-    this.schedule = courses.map((course, index) => ({
-      day: this.weekDays[index % this.weekDays.length], // rotate thru weekdays
-      time: timeSlots[index % timeSlots.length],       // rotate thru time slots
+    this.schedule = enrolledCourses
+    .map(courseId => this.sharedService.getCourses().find(course => course.id === courseId)) // get full Course objects
+    .filter((course): course is Course => !!course) // filter out any undefined values
+    .map((course, index) => ({
+      day: this.weekDays[index % this.weekDays.length], // rotate through weekdays
+      time: timeSlots[index % timeSlots.length],       // rotate through time slots
       course: course.name,
     }));
-  }
+  
+  } 
 }

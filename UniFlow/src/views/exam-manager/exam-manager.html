@@ -1,34 +1,13 @@
 <template>
     <div if.bind="role ==='student'" class="exam-manager-container mdc-card">
-      <h2 class="mdc-typography--headline6">Exam Manager</h2>
-      <ul class="mdc-list">
-        <li repeat.for="exam of exams" class="mdc-list-item">
-          <span class="mdc-list-item__text">${exam.subject} - ${exam.date}</span>
+   
+      <!-- Student View -->
+      <h3>Your Upcoming Exams</h3>
+      <ul class="exam-list">
+        <li repeat.for="exam of filteredExams" class="exam-item">
+          ${exam.subject} - ${exam.date}
         </li>
       </ul>
-
-
-      <section id="grades">
-        <h2>Grades</h2>
-        <table>
-            <tr>
-                <th>Course</th>
-                <th>Grade</th>
-            </tr>
-            <tr>
-                <td>Introduction to Programming</td>
-                <td>A</td>
-            </tr>
-            <tr>
-                <td>Data Structures</td>
-                <td>B+</td>
-            </tr>
-            <tr>
-                <td>Web Development</td>
-                <td>A-</td>
-            </tr>
-        </table>
-    </section>
     </div>
 
 

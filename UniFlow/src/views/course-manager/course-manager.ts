@@ -16,6 +16,8 @@ import { SharedService, Course } from '../../resources/shared-service';
 
     public newCourse: Course = { id: '', name: '', description: '' };
     public courses: Course[] = [];
+    public enrolledCourses: Course[] = []; 
+
 
     constructor(private sharedService: SharedService) {}
   
@@ -26,10 +28,19 @@ import { SharedService, Course } from '../../resources/shared-service';
       this.role = this.sharedService.getRole();
       this.courses = this.sharedService.getCourses();
 
+      const enrolledCourseIds = this.sharedService.getEnrolledCourses(this.username);
+
+      this.enrolledCourses = enrolledCourseIds
+        .map(courseId => this.courses.find(c => c.id === courseId)!)
+        .filter(Boolean); // ensure no null values
     }
 
   enroll(course: any) {
+    this.sharedService.enrollStudent(this.username, course.id);
+    this.enrolledCourses.push(course);
     alert(`You have enrolled in: ${course.name}`);
+
+
   }
 
   public showAvailableCourses() {
