@@ -49,6 +49,27 @@
                   <p>${ course.description }</p>
                 </div>
           </div>
+           <!-- Grading Assignments Section -->
+      <div if.bind="gradingAssignmentsVisible">
+        <h3>Grade Assignments</h3>
+        <!-- Placeholder for grading functionality -->
+        <div class="grading-section">
+          <div repeat.for="course of courses" class="course-item">
+            <h2>${course.name}</h2>
+            <button click.trigger="gradeAssignments(course)">Grade Assignments</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Schedule Classes Section -->
+      <div if.bind="scheduleClassesVisible">
+        <h3>Schedule Classes</h3>
+        <div class="schedule-section">
+          <div repeat.for="course of courses" class="course-item">
+            <h2>${course.name}</h2>
+            <button click.trigger="scheduleClass(course)">Schedule Class</button>
+          </div>
+        </div>
 
         </div>
       </div>

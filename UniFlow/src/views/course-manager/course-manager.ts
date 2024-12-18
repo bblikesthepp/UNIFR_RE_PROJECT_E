@@ -13,6 +13,8 @@ import { SharedService, Course } from '../../resources/shared-service';
     public username: string = '';
     public role: string = 'undefined';  
     public showAvailableCourse: boolean= false;
+    gradingAssignmentsVisible: boolean = false;
+    scheduleClassesVisible: boolean = false;
 
     public newCourse: Course = { id: '', name: '', description: '' };
     public courses: Course[] = [];
@@ -55,6 +57,18 @@ import { SharedService, Course } from '../../resources/shared-service';
     } else {
       alert('Please provide both a course name and description.');
     }
+  }
+
+   // method to handle grading assignments
+   gradeAssignments(course: Course): void {
+    this.gradingAssignmentsVisible = true;
+    alert(`Grading assignments for ${course.name}`);
+  }
+
+  // method to handle scheduling classes
+  scheduleClass(course: Course): void {
+    this.scheduleClassesVisible = true;
+    alert(`Scheduling classes for ${course.name}`);
   }
   }
  
