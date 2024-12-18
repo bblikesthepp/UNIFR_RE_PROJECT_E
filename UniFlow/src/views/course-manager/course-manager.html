@@ -3,7 +3,7 @@
       <h1>Course Manager</h1>
   
   
-      <!-- Dynamic content based on the user's role -->
+      <!-- Student role -->
       <div if.bind="role === 'student'" class="student-section">
         <ul>
           <li><button click.trigger="showAvailableCourses()">View Courses</button></li>
@@ -28,12 +28,31 @@
 
       <div if.bind="role === 'teacher'" class="teacher-section">
         <ul>
-          <li><button click.trigger="navigateToCourseManagement()">Manage Courses</button></li>
+          <li><button click.trigger="showAvailableCourses()">Manage Courses</button></li>
           <li><button click.trigger="navigateToGradeAssignments()">Grade Assignments</button></li>
           <li><button click.trigger="navigateToGradeAssignments()">Schedule Classes</button></li>
-
         </ul>
+
+
+
+        <div if.bind="showAvailableCourse" class="course-management">
+          <form class="new-course" submit.trigger="addCourse()">
+            <label for="course-name">Course Name:</label>
+            <input type="text" id="course-name" value.bind="newCourse.name" required />
+            <label for="course-description">Course Description:</label>
+            <input type="text" id="course-description" value.bind="newCourse.description" required />
+            <button type="submit">Add Course</button>
+          </form>
+          <div class="course-list">
+            <div repeat.for="course of courses" class="course-item">
+              <h2>${ course.name }</h2>
+                  <p>${ course.description }</p>
+                </div>
+          </div>
+
+        </div>
       </div>
+
     </div>
   
 
