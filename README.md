@@ -5,8 +5,8 @@ UniFlow is a university campus management tool built with Aurelia. It provides d
 ## Features
 
 - **Home Page**: Welcome page with navigation to different sections.
-- **Student Dashboard**: Overview of student-related information and actions.
-- **Teacher Dashboard**: Overview of teacher-related information and actions.
+- **Student view Dashboard**: Overview of student-related information and actions.
+- **Teacher view Dashboard**: Overview of teacher-related information and actions.
 - **Course Manager**: Manage courses and related data.
 - **Exam Manager**: Manage and view exam schedules and results.
 - **Account**: User account management functionality.
@@ -19,7 +19,10 @@ UniFlow is a university campus management tool built with Aurelia. It provides d
 
 Make sure you have the following installed:
 
-- **Node.js**: 'npm install' for dependencies
+- **Node.js**: for dependencies
+    ```bash
+    npm install
+
 - **Git**: To clone and manage your project
 - **Aurelia CLI**: If you don't have the Aurelia CLI installed, install it globally:
   ```bash
@@ -30,7 +33,7 @@ Run the following commands in shell/terminal:
 
 - clone the git repository using the following command
   ```bash
-  git clone https://github.com/bblikesthepp/UniFlow
+  git clone https://github.com/bblikesthepp/UNIFR_RE_PROJECT_E
 - inside the Aurelia project folder called UniFlow, do 'npm start' to start a local server
    ```bash
    npm start
